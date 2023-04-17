@@ -5,30 +5,29 @@ import { io } from "socket.io-client";
 import { YourMsg } from "../ChatPanel/items/YourMsg";
 import { FriendMsg } from "../ChatPanel/items/FriendMsg";
 import Image from "next/image";
-
 // const socket = io("http://localhost:4000");
 const socket = io("https://chat2-0-back.onrender.com/");
 
 export const ChatPanelMsg = () => {
   const [ message, setMessage ] = React.useState("");
   const [state, setState] = React.useState([]);
-  const router = useRouter();
-  let valueUser:string | any = router?.query.id;
-  let userValue = valueUser?.split("_");
-
+  const router: any = useRouter();
+  let valueUser: string = router?.query.id || "";
+  let [name, room] = valueUser?.split("_");
+  
   const sendMsg = (e:React.MouseEvent) => {
     e.preventDefault();
-    let params = { room: userValue[1], name: userValue[0]};
+    let params = { room: room, name: name};
     if (!message) return;
     socket.emit("sendMessage", { message, params });
     setMessage("");
   };
 
   React.useEffect(() => {
-    if (userValue) {
-      socket.emit("join",{name:userValue[0], room:userValue[1]});
+    if (name) {
+      socket.emit("join",{name:name, room:room});
     }}, [valueUser]);
-
+    
   React.useEffect(() => {
     socket.on("message", ( data ) => {
       setState((_state):any => [..._state, data]);
@@ -38,7 +37,7 @@ export const ChatPanelMsg = () => {
   return <><div className={style.messagePanel}>
     <div className={style.messageContainer}>
       {state?.map((item:any, index) => {
-        if (item.data.user.name === userValue[0]){
+        if (item.data.user.name === name){
           return<YourMsg {...item.data} key={index}></YourMsg>
         }else return<FriendMsg key={index} {...item.data}></FriendMsg>
       })}
