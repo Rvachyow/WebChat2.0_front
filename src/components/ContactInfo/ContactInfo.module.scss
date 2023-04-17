@@ -1,0 +1,131 @@
+.contactInfo {
+    border-left: 2px solid #37393C;
+    height: 100%;
+    width: 280px;
+}
+.title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    border-bottom: 2px solid #37393C;
+    max-height: 66px;
+    .title__img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+.avatar {
+    height: 232px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #37393C;
+    .avatar__container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        .avatar__text {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            p {
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+}
+
+.info {
+    border-bottom: 2px solid #37393C;
+    .info__container {
+        padding: 24px 24px;
+    }
+    .info__text {
+        p {
+            font-family: "Nunito";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    }
+}
+
+.media {
+    border-bottom: 2px solid #37393C;
+    .media__container {
+        display: flex;
+        padding: 24px 0px;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .media__text {
+        display: flex;
+        gap: 5px;
+        padding: 0px 24px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: rgba(255, 255, 255, 0.6);
+
+    }
+    .block {
+        overflow: hidden;
+        padding-left: 24px;
+        display: flex;
+        gap: 4px;
+        width: 100%;
+    }
+    .block__item {
+        flex: 1 0 auto;
+    }
+}
+
+.marked {
+    border-bottom: 2px solid #37393C;
+    .marked__container {
+        padding: 24px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+    .marked__marked {
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 12px;
+        background-color: #26272D;
+        border-radius: 4px;
+    }
+    .market__text {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+    }
+}
+
+.settings {
+    
+    .marked__container {
+        padding: 24px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+    .marked__marked {
+        display: flex;
+        justify-content: space-between;
+        padding: 7px 12px;
+        background-color: #26272D;
+        border-radius: 4px;
+    }
+    .market__text {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+    }
+}

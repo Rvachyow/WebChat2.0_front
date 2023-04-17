@@ -1,0 +1,9 @@
+.btn_app {
+    padding: 14px 16px;
+    background: #1C1D22;
+    border-radius: 8px;
+    width: 100%;
+    &:active {
+        opacity: 0.5;
+    }
+}

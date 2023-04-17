@@ -1,0 +1,31 @@
+.topPanel {
+    border-bottom: 2px solid #37393C;
+    max-height: 66px;
+}
+.container {
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between
+}
+.topPanel__userInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.dots {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    .dots__dot {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: white;
+    }
+}
+.topPanel__settings {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}

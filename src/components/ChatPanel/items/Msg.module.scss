@@ -1,0 +1,45 @@
+.yourMsg {
+    display: flex;
+    align-self: flex-end;
+    background: #BDD2B6;
+    max-width: 500px;
+    border-radius: 4px;
+    margin-right: 30px;
+    .yourMsg__container {
+        padding: 12px 8px;
+        color: black;
+        position: relative;
+        &::after {
+            content: "";
+            width: 20px;
+            height: 15px;
+            top: 0;
+            right: -15px;
+            position: absolute;
+            background-image: url("../../../../public/assets/tri.svg");
+            
+        }
+    }
+}
+
+.friendMsg {
+    display: flex;
+    background: #26272D;
+    max-width: 500px;
+    border-radius: 4px;
+    margin-left: 30px;
+    .friendMsg__container {
+        padding: 12px 8px;
+        color: white;
+        position: relative;
+        &::after {
+            content: "";
+            width: 20px;
+            height: 15px;
+            top: 0;
+            left: -15px;
+            position: absolute;
+            background-image: url("../../../../public/assets/triA.svg");
+        }
+    }
+}
