@@ -6,10 +6,11 @@ export const FriendPanel = () => {
     <div className={style.topbar}>
       <div className={style.avatar}>
         <div className={style.avatar__image}>
-          <Image alt="avatar" height={40} width={40} src="/../assets/avatar.png"></Image></div>
+          <Image alt="avatar" height={40} width={40} src={"/../assets/avatar.svg"}></Image>
+        </div>
         <div className={style.avatar__settings}>
           <div className={style.avatar__image}>
-            <Image alt="chat" height={24} width={24} src="/../assets/chat-new-line.svg"></Image></div>
+            <Image alt="chat" height={24} width={24} src={"/../assets/chat-new-line.svg"}></Image></div>
           <div className={style.avatar__dots}>
             <div className={style.avatar__dot}></div>
             <div className={style.avatar__dot}></div>
