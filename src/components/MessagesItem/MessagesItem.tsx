@@ -5,7 +5,7 @@ import Image from "next/image";
 export const MessagesItem = ({ active }: { active: boolean }) => {
   return <div className={clsx(style.messages__item, {[style.active]:active})}>
     <div className={style.container}>
-      <Image alt="avatar" src="/./assets/avatar2.png" width={48} height={48}></Image>
+      <Image alt="avatar" src="/../assets/StoreAvatar.svg" width={48} height={48}></Image>
       <div className={style.messages__text}>
         <div className={style.messages__name}>
           <span>Lara Mueller</span>

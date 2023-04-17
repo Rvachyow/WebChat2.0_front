@@ -69,8 +69,8 @@
         user-select: none;
     }
     .stories__btn {
-        flex: 1 0 auto;
-        width: 47px;
+        flex: 0 1 auto;
+        min-width: 47px;
         height: 47px;
         border-radius: 50%;
         display: flex;

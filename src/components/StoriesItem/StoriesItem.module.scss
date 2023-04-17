@@ -1,0 +1,11 @@
+.stories__title {
+    padding: 0px 24px;
+}
+.stories__iconimg {
+    flex: 1 0 auto;
+    cursor: pointer;
+    :hover {
+        border: 2px solid #74959A;
+        border-radius: 50%;
+    }
+}

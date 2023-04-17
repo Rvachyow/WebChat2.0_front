@@ -1,5 +1,6 @@
 import { MessagesItem } from "../MessagesItem/MessagesItem";
 import style from "./FriendPanel.module.scss";
+import { StoriesItem } from "../StoriesItem/StoriesItem";
 import Image from "next/image";
 export const FriendPanel = () => {
   return <div className={style.friendpanel}>
@@ -35,21 +36,10 @@ export const FriendPanel = () => {
           <button className={style.stories__btn}>
             <Image alt="plus" width={11} height={11} src="/../assets/plus.svg"></Image>
           </button>
-          <div className={style.stories__iconimg}>
-            <Image alt="avatar" src="/./assets/avatar2.png" width={48} height={48}></Image>
-          </div>
-          <div className={style.stories__iconimg}>
-            <Image alt="avatar" src="/./assets/avatar2.png" width={48} height={48}></Image>
-          </div>
-          <div className={style.stories__iconimg}>
-            <Image alt="avatar" src="/./assets/avatar2.png" width={48} height={48}></Image>
-          </div>
-          <div className={style.stories__iconimg}>
-            <Image alt="avatar" src="/./assets/avatar2.png" width={48} height={48}></Image>
-          </div>
-          <div className={style.stories__iconimg}>
-            <Image alt="avatar" src="/./assets/avatar2.png" width={48} height={48}></Image>
-          </div>
+          <StoriesItem></StoriesItem>
+          <StoriesItem></StoriesItem>
+          <StoriesItem></StoriesItem>
+          <StoriesItem></StoriesItem>
         </div>
       </div>
     </div>
