@@ -6,7 +6,8 @@ import { YourMsg } from "../ChatPanel/items/YourMsg";
 import { FriendMsg } from "../ChatPanel/items/FriendMsg";
 import Image from "next/image";
 
-const socket = io("http://localhost:4000");
+// const socket = io("http://localhost:4000");
+const socket = io("https://chat2-0-back.onrender.com/");
 
 export const ChatPanelMsg = () => {
   const [ message, setMessage ] = React.useState("");
