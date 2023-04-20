@@ -8,8 +8,8 @@ import Image from "next/image";
 import { useAppSelector } from "@/redux/hook";
 import { selectIsAuth } from "@/redux/slices/user/userSlice";
 
-const socket = io("http://localhost:4000");
-// const socket = io("https://chat2-0-back.onrender.com/");
+// const socket = io("http://localhost:4000");
+const socket = io("https://chat2-0-back.onrender.com/");
 export const ChatPanelMsg = () => {
 
   const [ message, setMessage ] = React.useState("");
