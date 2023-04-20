@@ -1,24 +1,40 @@
 import style from "./Login.module.scss";
 import { AppButton } from "../AppButton/AppButton";
-import { useAppSelector } from "@/redux/hook";
+import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { postLogin, selectIsAuth } from "@/redux/slices/user/userSlice";
 
 export const Login = () => {
+  
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const data = useAppSelector((state) => state.language.language.loginPage);
-  const { register, handleSubmit, formState: {errors, isValid} } = useForm({
+  const isAuth = useAppSelector(selectIsAuth);
+  const userName = useAppSelector((state) => state.user.data.fullName);
+  
+  const { register, reset, handleSubmit, formState: {errors, isValid} } = useForm({
     defaultValues: {
-      email: "",
-      password: "",
+      email: "clow@gmail.com",
+      password: "qwe12345",
     },
     mode: "onChange"});
-  const onSubmit = (value:any) => {
-    const { email, password } = value;
-    let refUrl = email + "_" + password;
-    router.push(`/Chat/${refUrl}`);
+
+  const onSubmit = async(value:{}) => {
+    const { payload } = await dispatch(postLogin(value));
+    if (!payload) 
+      return reset({
+        email: "",
+        password: "",
+      });
+    if ("token" in payload) {
+      window.localStorage.setItem("token", payload.token);
+    }
+    router.push(`/Chat/${payload.fullName}`);
   };
+  if (isAuth) router.push(`/Chat/${userName}`);
+  
   return <form onSubmit={handleSubmit(onSubmit)} className={style.login}>
     <input 
       {...register("email", { required: "Укажите полное имя" })} 

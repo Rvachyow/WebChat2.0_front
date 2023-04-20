@@ -1,0 +1,24 @@
+.topItems {
+    border-bottom: 2px solid #37393C;
+}
+.avatar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.container {
+    
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.btn_topitem {
+    display: flex;
+    align-items: center;
+    transform: rotate(44deg);
+    &:active {
+        opacity: 0.5;
+    }
+}

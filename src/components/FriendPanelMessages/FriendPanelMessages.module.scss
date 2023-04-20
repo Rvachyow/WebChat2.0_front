@@ -1,0 +1,15 @@
+.messages {
+    .messages__container {
+        padding: 12px 0px 0px 0px;
+        .messages__message { 
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            max-height: 580px;
+        }
+        .messages__title {
+            padding: 0px 24px;
+            padding-bottom: 12px;
+        }
+    }
+}
