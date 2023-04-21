@@ -1,19 +1,21 @@
-import style from "./AppChat.module.scss";
+import style from "./MobileAppChat.module.scss";
 import { FriendPanel } from "../FriendPanel/FriendPanel";
-import { ContactInfo } from "../ContactInfo/ContactInfo";
-import { ChatPanel } from "../ChatPanel/ChatPanel";
 import { useAppSelector } from "@/redux/hook";
+import { ChatPanel } from "../ChatPanel/ChatPanel";
 import useWindowSize from "../../../utils/useWindowSize";
-import { MobileAppChat } from "../MobileAppChat/MobileAppChat";
-export const AppChat = () => {
+export const MobileAppChat = () => {
   const { data, status } = useAppSelector((state) => state.friend.chosenFriend);
   const { width } = useWindowSize();
 
-  if (width <= 900) return <MobileAppChat/>;
-  
-  return <div className={style.appchat}>
+  if (width <= 700) {
+    return <div className={style.mobileApp}>
+      {status? "" : <FriendPanel></FriendPanel>}
+      {status? <ChatPanel></ChatPanel> : ""}
+    </div>;
+  }
+
+  return <div className={style.mobileApp}>
     <FriendPanel></FriendPanel>
     {status? <ChatPanel></ChatPanel> : ""}
-    <ContactInfo></ContactInfo>
   </div>;
 };

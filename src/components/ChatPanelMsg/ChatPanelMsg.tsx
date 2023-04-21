@@ -6,10 +6,9 @@ import { YourMsg } from "../ChatPanel/items/YourMsg";
 import { FriendMsg } from "../ChatPanel/items/FriendMsg";
 import Image from "next/image";
 import { useAppSelector } from "@/redux/hook";
-import { selectIsAuth } from "@/redux/slices/user/userSlice";
 
-// const socket = io("http://localhost:4000");
-const socket = io("https://chat2-0-back.onrender.com/");
+const socket = io("http://localhost:4000");
+// const socket = io("https://chat2-0-back.onrender.com/");
 export const ChatPanelMsg = () => {
 
   const [ message, setMessage ] = React.useState("");
@@ -17,12 +16,17 @@ export const ChatPanelMsg = () => {
   const [ toggle, setToggle ] = React.useState(false);
   const { name } = useAppSelector((state) => state.friend.chosenFriend.data);
   const { id }: any = useRouter().query;
+  const refContainer = React.useRef<any>();
 
   const roomName = () => {
     let copyName = id + name;
     let res = copyName.split("").sort().join("").toLowerCase()
     return res;
   };
+
+  React.useEffect(() => {
+    refContainer.current.scrollBy(0, 300);
+  },[state]);
 
   const sendMsg = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -56,7 +60,7 @@ export const ChatPanelMsg = () => {
         document.removeEventListener("keydown", handleKeyDown);
       };
     }
-  }, [toggle]);
+  }, [message]);
 
   React.useEffect(() => {
     if (id) {
@@ -70,7 +74,7 @@ export const ChatPanelMsg = () => {
   }, []);
 
   return <><div className={style.messagePanel}>
-    <div className={style.messageContainer}>
+    <div ref={refContainer} className={style.messageContainer}>
       {state?.map((item:any, index) => {
         if (item.data.user.name === id){
           return<YourMsg {...item.data} key={index}></YourMsg>
