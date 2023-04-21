@@ -8,5 +8,8 @@
     -webkit-box-shadow: 4px 4px 17px 0px rgba(34, 60, 80, 0.7);
     -moz-box-shadow: 4px 4px 17px 0px rgba(34, 60, 80, 0.7);
     box-shadow: 4px 4px 17px 0px rgba(34, 60, 80, 0.7);
-    
+    @media screen and (max-width:700px){
+        height: 100vh;
+        
+    }
 }
